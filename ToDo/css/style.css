@@ -1,0 +1,117 @@
+body {
+  background-color: rgb(144, 210, 219);
+  position: relative;
+  padding-top: .1px;
+  height: 100%;
+}
+html {
+  height: 100%;
+}
+input {
+  margin-top: -2px;
+  margin-bottom: 1px;
+  vertical-align: middle;
+}
+.fr {
+  float: right;
+  color: rgb(192, 192, 192);
+}
+.fr .active {
+  margin-right: .5em;
+}
+.fr .active:hover {
+  color: #53ceda;
+}
+.todo {
+  width: 500px;
+  margin: 80px auto;
+}
+.todo form {
+  margin-bottom: 20px;
+}
+.todo h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.todo .add-task input {
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+}
+.todo .add-task input:first-child {
+  box-sizing: border-box;
+  padding-left: 2%;
+  width: 70%;
+}
+.todo .add-task input:last-child:hover {
+  background-color: #53ceda;
+}
+.task-list {
+  width: 100%;
+}
+.task-list .task-item {
+  margin-top: 5px;
+  padding: 5px 5px;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.task-list .task-item:hover {
+  background-color: #f2f8f8
+}
+.task-list .task-item input:first-child {
+  margin-right: 8px;
+}
+.task-item .item-content {
+  margin-left: .5em;
+}
+
+.item-detail {
+  display: none;
+  width: 255px;
+  padding: 20px;
+  padding-right: 25px;
+  position: absolute;
+  top: 170px;
+  left: 50%;
+  border-radius: 3px;
+  margin-left: -150px;
+  background-color: #fffbe3;
+  z-index: 5;
+}
+.detail-content {
+  width: 100%;
+}
+.detail-desc {
+  width: 100%;
+  resize: none;
+}
+.detail-time {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn {
+  box-sizing: border-box;
+  width: 70px;
+  padding: 5px 5px;
+  background-color: #c3e3e6;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+.btn:hover {
+  background-color: #53ceda;
+}
+
+/* .shade {
+  display: none;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1
+} */

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/jquery.datetimepicker.min.css">
+</head>
+
+<body>
+    <div class="todo">
+        <h1>ToDo List</h1>
+        <form class="add-task">
+            <input type="text" class="item-content">
+            <input type="submit" value="提交" class="btn add-btn">
+            <input type="submit" value="清空" class="btn clear-btn">
+        </form>
+
+        <div class="task-list">
+            <!-- <div class="task-item">
+                <input type="checkbox">
+                <span>
+                    这是今天要做的事情
+                </span>
+                <span class="fr">
+                    <span class="active detail">详情</span>
+                    <span class="active delete">删除</span>
+                </span>
+            </div> -->
+        </div>
+    </div>
+    <!-- 弹窗 -->
+    <div class="item-detail">
+        <input type="text" class="detail-content">
+        <p>备注</p>
+        <textarea cols="30" rows="6" class="detail-desc"></textarea>
+        <p>设置闹钟</p>
+        <input type="text" class="detail-time">
+        <button class="detail-btn btn">提交</button>
+        <button class="leave-btn btn">放弃</button>
+    </div>
+    <!-- <div class="shade"></div> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.datetimepicker.full.js"></script>
+    <script src="js/store.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/store.js/1.3.20/store.js"></script> -->
+    <script src="js/todo.js"></script>
+</body>
+
+</html>
