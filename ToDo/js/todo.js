@@ -54,7 +54,7 @@ var todoModule = (function() {
                      +         '<span class="active detail">详情</span>'
                      +         '<span class="active delete">删除</span>'
                      +     '</span>'
-                     + '</div>'
+                     + '</div>';
         $(itemHtml).prependTo($taskList);
         addDetail();
         deleteItem();
@@ -70,7 +70,7 @@ var todoModule = (function() {
             store.set('taskList',taskList);
             addItem(newContent);
             $itemContent.val('');
-        })
+        });
     }
 
     // 添加item详情事件
@@ -82,7 +82,7 @@ var todoModule = (function() {
             $detailContent.val(taskList[index].content);
             $detailDesc.val(taskList[index].desc);
             $detailTime.val(taskList[index].time);
-        })
+        });
     }
 
     // 提交并存储详情
@@ -100,30 +100,34 @@ var todoModule = (function() {
             $itemDetail.hide();
             $shade.hide();
             initList();
-        })
+        });
     }
 
     // 离开详情页面
     var leave = function() {
-        $(document).mouseup(function(e){
-            if(!$itemDetail.is(e.target) && $itemDetail.has(e.target).length === 0){ // Mark 1
-                $itemDetail.hide();
-            }
-        });
-        $leaveBtn.click(function() {
-            $itemDetail.hide();
-        })
-        // ($leaveBtn,$shade).click(function() {
-        //     $shade.hide();
+        // $(document).mouseup(function(e){
+        //     if(!$itemDetail.is(e.target) && $itemDetail.has(e.target).length === 0){ // Mark 1
+        //         $itemDetail.hide();
+        //     }
+        // });
+        // $leaveBtn.click(function() {
         //     $itemDetail.hide();
         // })
+        ($leaveBtn).click(function() {
+            $shade.hide();
+            $itemDetail.hide();
+        });
+        ($shade).click(function() {
+            $shade.hide();
+            $itemDetail.hide();
+        });
     }
     // 添加清空列表监听事件
     var clearItem = function() {
         $clearBtn.on('click', function(e) {
             e.preventDefault();
             clearList();
-        })
+        });
     }
 
     // 删除列表项目
@@ -133,7 +137,7 @@ var todoModule = (function() {
             $(this).parent().parent().remove();
             taskList.splice(index,1);
             store.set('taskList',taskList);
-        })
+        });
     }
 
     // 初始化模块
