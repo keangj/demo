@@ -125,18 +125,30 @@ var todoModule = (function() {
     // 添加清空列表监听事件
     var clearItem = function() {
         $clearBtn.on('click', function(e) {
+            var result;
+            var length =$taskList.children().length;
             e.preventDefault();
-            clearList();
+            if (length !== 0) {
+                result = window.confirm('确定要清空列表吗？');
+                if (result) {
+                    clearList();
+                }
+            } else {
+                alert('列表空空如也，无需清空。');
+            }
         });
     }
 
     // 删除列表项目
     var deleteItem = function() {
-        $('.delete').click(function(){
+        $('.delete').off('click').click(function(){  // off() 解决事件多次绑定的bug
+            var result = window.confirm('确定要删除吗？');
             index = taskList.length - 1 - $(this).parent().parent().index();
-            $(this).parent().parent().remove();
-            taskList.splice(index,1);
-            store.set('taskList',taskList);
+            if (result) {
+                $(this).parent().parent().remove();
+                taskList.splice(index,1);
+                store.set('taskList',taskList);
+            }
         });
     }
 
